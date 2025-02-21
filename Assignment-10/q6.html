@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>z-index Example with JavaScript</title>
+    <link rel="icon" type="image/png" href="fav-icon.png">
+    <style>
+        div,
+        img {
+            border: 1px solid black;
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            position: absolute;
+        }
+
+        #item1 {
+            top: 50px;
+            left: 50px;
+        }
+
+        #item2 {
+            top: 100px;
+            left: 100px;
+        }
+
+        #item3 {
+            top: 150px;
+            left: 150px;
+        }
+    </style>
+    <script>
+        function imgToTop(p1) {
+            // Reset all images' z-index to 0
+            document.getElementById('item1').style.zIndex = 0;
+            document.getElementById('item2').style.zIndex = 0;
+            document.getElementById('item3').style.zIndex = 0;
+
+            // Set the clicked image's z-index to 1 (bring it to the front)
+            document.getElementById(p1).style.zIndex = 1;
+        }
+    </script>
+</head>
+
+<body>
+    <img id="item1" onclick="imgToTop('item1')" src="image1.jpg" alt="Image 1">
+    <img id="item2" onclick="imgToTop('item2')" src="image2.jpg" alt="Image 2">
+    <img id="item3" onclick="imgToTop('item3')" src="image3.jpg" alt="Image 3">
+</body>
+</html>

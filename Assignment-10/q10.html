@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive To-Do List</title>
+</head>
+<body>
+    <input type="text" id="item" placeholder="New item">
+    <button onclick="addItem()">Add</button>
+    <ul id="list"></ul>
+
+    <script>
+        function addItem() {
+            const itemText = document.getElementById('item').value;
+            if (itemText.trim()) {
+                const li = document.createElement('li');
+                li.textContent = itemText;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.textContent = 'Remove';
+                removeBtn.onclick = () => li.remove();
+                li.appendChild(removeBtn);
+                
+                document.getElementById('list').appendChild(li);
+                document.getElementById('item').value = '';
+            }
+        }
+    </script>
+</body>
+</html>

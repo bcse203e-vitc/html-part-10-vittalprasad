@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <script>
+        function showOrderSummary() {
+            const size = document.querySelector('input[name="size"]:checked').value;
+            const toppings = Array.from(document.querySelectorAll('input[name="topping"]:checked'))
+                                  .map(topping => topping.value);
+            alert(`You ordered a ${size} pizza with ${toppings.join(", ")} toppings.`);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="showOrderSummary(); return false;">
+        <fieldset>
+            <legend>Pizza Size</legend>
+            <input type="radio" name="size" value="Small" required> Small
+            <input type="radio" name="size" value="Medium"> Medium
+            <input type="radio" name="size" value="Large"> Large
+        </fieldset>
+        <fieldset>
+            <legend>Toppings</legend>
+            <input type="checkbox" name="topping" value="Cheese"> Cheese
+            <input type="checkbox" name="topping" value="Pepperoni"> Pepperoni
+            <input type="checkbox" name="topping" value="Mushrooms"> Mushrooms
+            <input type="checkbox" name="topping" value="Olives"> Olives
+        </fieldset>
+        <button type="submit">Order Now</button>
+    </form>
+</body>
+</html>

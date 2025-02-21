@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Theme Switcher</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button onclick="switchToLightMode()">Light Mode</button>
+    <button onclick="switchToDarkMode()">Dark Mode</button>
+
+    <script>
+        function switchToLightMode() {
+            document.body.className = 'light-mode';
+        }
+
+        function switchToDarkMode() {
+            document.body.className = 'dark-mode';
+        }
+    </script>
+</body>
+</html>

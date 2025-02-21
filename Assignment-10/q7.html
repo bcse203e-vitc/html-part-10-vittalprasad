@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word and Character Counter</title>
+</head>
+<body>
+    <textarea id="text" oninput="countWordsAndCharacters()"></textarea>
+    <p id="count">Words: 0 | Characters: 0</p>
+
+    <script>
+        function countWordsAndCharacters() {
+            const text = document.getElementById('text').value;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0).length;
+            const characters = text.length;
+
+            if (characters > 200) {
+                alert('Character limit exceeded!');
+            }
+
+            document.getElementById('count').textContent = `Words: ${words} | Characters: ${characters}`;
+        }
+    </script>
+</body>
+</html>
